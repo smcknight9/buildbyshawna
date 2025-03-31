@@ -1,11 +1,12 @@
 ---
 layout: default
-title: Welcome to Built by Shawna 👋
+title: "HOMEPAGE"
 ---
 
-This is my home for coding projects, blogs, and creative experiments.
+# [BUILT](/built/)
 
-- ✨ [Read by Shawna](/read/)
-- 🛠️ [Built by Shawna](/built/)
+# [READ](/read/)
+
+
 
 Stay tuned as I build this space out!

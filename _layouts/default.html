@@ -1,10 +1,52 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 2rem;
+      max-width: 800px;
+      line-height: 1.6;
+    }
 
-<h1>{{ page.title }}</h1>
-<small>{{ page.date | date: "%B %d, %Y" }}</small>
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin: 2rem 0;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
 
-<div class="content">
-  {{ content }}
-</div>
+    h1 a {
+      text-decoration: none;
+      color: black;
+      transition: color 0.3s ease;
+    }
+
+    h1 a:hover {
+      color: #FFA630; /* mango orange */
+    }
+
+    h1 a::after {
+      content: "BY SHAWNA";
+      -webkit-text-stroke: 1px black;
+      text-stroke: 1px black;
+      color: transparent;
+      margin-left: 0.5rem;
+    }
+
+    .content {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    {{ content }}
+  </div>
+</body>
+</html>
