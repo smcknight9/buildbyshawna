@@ -1,10 +1,10 @@
 ---
-layout: default
-title: Built by Shawna
+layout: section
+title: BUILT BY SHAWNA
 permalink: /built/
 ---
 
-# Built by Shawna
+# BUILT
 
 {% for item in site.built %}
 - [{{ item.title }}]({{ item.url }})
