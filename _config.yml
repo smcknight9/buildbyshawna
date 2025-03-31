@@ -1,0 +1,21 @@
+collections:
+  read:
+    output: true
+    permalink: /read/:title/
+
+  built:
+    output: true
+    permalink: /built/:title/
+
+defaults:
+  - scope:
+      path: "_built"
+      type: "built"
+    values:
+      layout: "default"
+  
+  - scope:
+      path: "_read"
+      type: "read"
+    values:
+      layout: "default"
