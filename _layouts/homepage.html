@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{{ page.title }}</title>
+  <title>Built by Shawna</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
@@ -12,41 +12,106 @@
       line-height: 1.6;
     }
 
-    h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      margin: 2rem 0;
-      display: flex;
-      align-items: baseline;
-      gap: 0.5rem;
+    nav {
+      margin-bottom: 2rem;
     }
 
-    h1 a {
+    nav a {
+      margin-right: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+    }
+
+    nav a:hover {
+      color: #FFA630;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      display: flex;
+      gap: 0.5rem;
+      margin: 3rem 0 2rem;
+    }
+
+    .hero-title .solid {
+      color: black;
+      transition: color 0.3s ease;
+    }
+
+    .hero-title .solid:hover {
+      color: #FFA630;
+    }
+
+    .hero-title .outline {
+      -webkit-text-stroke: 1px black;
+      text-stroke: 1px black;
+      color: transparent;
+    }
+
+    .section {
+      margin-bottom: 4rem;
+    }
+
+    .project-list, .read-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .project-list li, .read-list li {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .project-list a, .read-list a {
       text-decoration: none;
       color: black;
       transition: color 0.3s ease;
     }
 
-    h1 a:hover {
-      color: #FFA630; /* mango orange */
-    }
-
-    h1 a::after {
-      content: "BY SHAWNA";
-      -webkit-text-stroke: 1px black;
-      text-stroke: 1px black;
-      color: transparent;
-      margin-left: 0.5rem;
-    }
-
-    .content {
-      margin-top: 2rem;
+    .project-list a:hover, .read-list a:hover {
+      color: #FFA630;
     }
   </style>
 </head>
 <body>
-  <div class="content">
-    {{ content }}
-  </div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#built">Built</a>
+    <a href="#read">Read</a>
+  </nav>
+
+  <section id="about" class="section">
+    <div class="hero-title">
+      <span class="solid">ABOUT</span>
+      <span class="outline">BY SHAWNA</span>
+    </div>
+    <p>Welcome! I'm Shawna — this is my home for coding projects, book notes, and creative experiments. Stay tuned as I build this space out ✨</p>
+  </section>
+
+  <section id="built" class="section">
+    <div class="hero-title">
+      <span class="solid">BUILT</span>
+      <span class="outline">BY SHAWNA</span>
+    </div>
+    <ul class="project-list">
+      {% for item in site.built %}
+        <li><a href="{{ item.url }}">{{ item.title }} →</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section id="read" class="section">
+    <div class="hero-title">
+      <span class="solid">READ</span>
+      <span class="outline">BY SHAWNA</span>
+    </div>
+    <ul class="read-list">
+      {% for item in site.read %}
+        <li><a href="{{ item.url }}">{{ item.title }} →</a></li>
+      {% endfor %}
+    </ul>
+  </section>
 </body>
 </html>

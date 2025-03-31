@@ -2,6 +2,7 @@ title: Built by Shawna
 description: Personal coding projects landing pages and blog
 baseurl: "" 
 url: "https://builtbyshawna.dev"
+theme: null
 
 # Enable output for custom collections
 collections:

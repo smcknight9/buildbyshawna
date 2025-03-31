@@ -1,12 +1,4 @@
 ---
-layout: default
-title: "HOMEPAGE"
+layout: single-page
+title: Homepage
 ---
-
-# [BUILT](/built/)
-
-# [READ](/read/)
-
-
-
-Stay tuned as I build this space out!

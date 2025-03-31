@@ -1,10 +1,10 @@
 ---
-layout: default
-title: Read by Shawna
+layout: section
+title: READ BY SHAWNA 
 permalink: /read/
 ---
 
-# Read by Shawna
+# READ
 
 {% for item in site.read %}
 - [{{ item.title }}]({{ item.url }})
