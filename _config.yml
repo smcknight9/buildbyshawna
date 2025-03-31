@@ -17,9 +17,9 @@ defaults:
       path: "_built"
       type: "built"
     values:
-      layout: "default"
+      layout: "section"
   - scope:
       path: "_read"
       type: "read"
     values:
-      layout: "default"
+      layout: "section"
