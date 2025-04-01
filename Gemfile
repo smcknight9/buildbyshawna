@@ -4,4 +4,6 @@ ruby "3.2.2"
 
 gem "github-pages", group: :jekyll_plugins
 
-gem "webrick", "~> 1.8" # needed for local Jekyll server with Ruby 3+
+gem "webrick", "~> 1.8" 
+
+gem "jekyll-sitemap"

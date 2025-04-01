@@ -6,21 +6,32 @@ theme: null
 
 # Enable output for custom collections
 collections:
-  built:
+  portfolio:
     output: true
-    permalink: /built/:title/
-  read:
+    permalink: /portfolio/:title/
+  books:
     output: true
-    permalink: /read/:title/
+    permalink: /books/:title/
+  tooling:
+    output: true
+    permalink: /tooling/:title/
 
 defaults:
   - scope:
-      path: "_built"
-      type: "built"
+      path: "_portfolio"
+      type: "portfolio"
     values:
       layout: "section"
   - scope:
-      path: "_read"
-      type: "read"
+      path: "_books"
+      type: "books"
     values:
       layout: "section"
+  - scope:
+      path: "_tooling"
+      type: "tooling"
+    values:
+      layout: "section"
+
+plugins:
+  - jekyll-sitemap
