@@ -1,5 +1,7 @@
 main:
   - title: "Built by Shawna"
-    url: "/built/"
+    url: "/portfolio/"
   - title: "Read by Shawna"
-    url: "/read/"
+    url: "/books/"
+  - title: "Used by Shawna"
+    url: "/tooling/"
