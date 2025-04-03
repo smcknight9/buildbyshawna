@@ -23,7 +23,7 @@ This week, I wrapped up **Milestone 1**, and I wanted to share a bit of the proc
 The architecture:
 
 - **Second Brain**: Ingests and stores journal entries via a FastAPI service + Postgres
-- **Constellation**: Handles search and AI logic, powered by Weaviate and OpenAI embeddings
+- **Constellation**: Handles search and AI logic, powered by Weaviate and `sentence-transformers-multi-qa-MiniLM-L6-cos-v1` embeddings
 - **CLI**: A simple interface using the Typer python module for adding, retrieving, and semantically searching entries using cosine similarity 
 
 ![Mermaid.js diagram of semantic search architecture](/assets/images/constellation-architecture-1.jpeg "Early mermaid.js architecture diagram that needs updating.")
@@ -45,7 +45,7 @@ def index_journal_entry(entry_id: str, content: str):
     requests.post(url, json=payload)
 ```
 
-Right now I'm using the **`text2vec-openai`** module. It’s hosted, lightweight, and lets me focus on wiring everything together before I explore alternatives like SentenceTransformers or Cohere.
+Right now I'm using the **`Weaviate`** module. It’s hosted, lightweight, and lets me focus on wiring everything together before I explore alternatives like SentenceTransformers or Cohere.
 
 ## 🤕 What Broke 
 
@@ -143,14 +143,14 @@ $ python cli.py search "toddler"
 📝 Content: Today Ashwin squeegeed all the play equipment like he was a mini parks and rec employee
 📝 Created At: 2025-03-17T05:21:56.239169
 ```
-The search isn’t keyword-based—it’s **semantic**, powered by `text2vec-openai`. So even though “pet” and “toddler” aren’t in the journal text directly, the system gets it. That’s the magic.
+The search isn’t keyword-based—it’s **semantic**, powered by `sentence-transformers-multi-qa-MiniLM-L6-cos-v1`. So even though “pet” and “toddler” aren’t in the journal text directly, the system gets it!
 
 
 ## 💍 Milestone 2: One Repo to Rule Them All
 
 I started with two repos—one for Second Brain, one for Constellation—but context-switching between them became a pain. Two `main.py`s, two `endpoints.py`s, and constant mental overhead.
 
-So for Milestone 2, I’m merging everything into a **single monorepo** with clean service boundaries. Still microservice-ish, just without the branching chaos.
+So for Milestone 2, I’m merging everything into a **single repo** with clean service boundaries. Still microservice-ish, just without the branch context switching.
 
 I’m hoping the restructure will also:
 - Reveal why my Weaviate volume isn’t persisting
