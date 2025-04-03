@@ -4,54 +4,110 @@
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Lora:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --accent-orange: #FFA630;
+      --bg-light: #fffdf6;
+      --text-main: #2a2a2a;
+      --text-muted: #666;
+      --code-bg: #fff3dd;
+      --code-text: #442d0d;
+      --code-border: #e0e0e0;
+    }
+
     body {
-      font-family: sans-serif;
-      margin: 2rem;
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      font-family: 'Josefin Sans', sans-serif;
       max-width: 800px;
-      line-height: 1.6;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent-orange);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
+      font-family: 'Lora', serif;
+      font-size: 2.75rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .subtitle {
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    h2, h3, h4 {
+      font-family: 'Lora', serif;
+      color: var(--text-main);
+      margin-top: 2rem;
+    }
+
+    pre, code {
+      font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+      background-color: var(--code-bg);
+      color: var(--code-text);
+      /* border: 1px solid var(--code-border); */
+      padding: 0.5em 0.75em;
+      overflow-x: auto;
+    }
+
+    pre {
       margin: 2rem 0;
-      display: flex;
-      gap: 0.5rem;
     }
 
-    h1::after {
-      content: "BY SHAWNA";
-      -webkit-text-stroke: 1px black;
-      text-stroke: 1px black;
-      color: transparent;
-      margin-left: 0.5rem;
+    code {
+      padding: 0.2em 0.4em;
     }
 
-    .project-list {
-      list-style: none;
-      padding: 0;
+    blockquote {
+      border-left: 4px solid var(--accent-orange);
+      padding-left: 1rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin: 1.5rem 0;
     }
 
-    .project-list li {
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
+    .content img {
+      max-width: 100%;
+      border-radius: 6px;
+      margin: 1rem 0;
     }
 
-    .project-list a {
-      text-decoration: none;
-      color: black;
-      transition: color 0.3s ease;
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid #eee;
     }
 
-    .project-list a:hover {
-      color: #FFA630;
-    }
   </style>
 </head>
 <body>
-  <div class="content">
+  <article class="content">
+    <h1>{{ page.title }}</h1>
+    {% if page.date %}
+      <p class="subtitle">{{ page.date | date: "%B %e, %Y" }}</p>
+    {% endif %}
     {{ content }}
-  </div>
+  </article>
+
+  <footer>
+    <p><a href="/">← Back to home</a></p>
+  </footer>
 </body>
 </html>
